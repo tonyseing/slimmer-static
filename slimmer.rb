@@ -8,7 +8,7 @@ require 'slim'
 if ARGV[0]
   Listen.to!(ARGV[0], :filter => /\.slim$/) do |modified, added| 
     modified.each do |modified_file|
-      system("slimrb #{ARGV[0]}/#{ modified_file} > #{ARGV[0]}/#{modified_file.gsub('.slim','')}.html")
+      system("slimrb #{ARGV[0]}/#{ modified_file} > #{ARGV[0]}/#{modified_file.gsub('.slim','')}.html --trace")
     end
   end
 end
